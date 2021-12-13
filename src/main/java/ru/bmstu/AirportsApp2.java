@@ -16,6 +16,6 @@ public class AirportsApp2 {
         JavaRDD<String> rows = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaPairRDD<Tuple2<Integer, Integer>, Flights> flights = rows.filter(FlightsParser::isNotFlightsHeader)
                 .mapToPair(FlightsParser::parseFlightsFile);
-
+        
     }
 }
