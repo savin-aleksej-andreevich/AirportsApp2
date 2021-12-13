@@ -6,6 +6,8 @@ public class Flight {
 
     public Flight (int originAirportID, int destAirportId, float delay, float isCanceled) {
         this.originAirportID = originAirportID;
-
+        this.destAirportId = destAirportId;
+        this.delay = delay;
+        this.isCanceled = isCanceled;
     }
 }
