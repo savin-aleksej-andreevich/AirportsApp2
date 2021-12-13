@@ -10,4 +10,36 @@ public class Flight {
         this.delay = delay;
         this.isCanceled = isCanceled;
     }
+
+    public int getOriginAirportID() {
+        return originAirportID;
+    }
+
+    public void setOriginAirportID(int originAirportID) {
+        this.originAirportID = originAirportID;
+    }
+
+    public int getDestAirportId() {
+        return destAirportId;
+    }
+
+    public void setDestAirportId(int destAirportId) {
+        this.destAirportId = destAirportId;
+    }
+
+    public float getDelay() {
+        return delay;
+    }
+
+    public void setDelay(float delay) {
+        this.delay = delay;
+    }
+
+    public float getIsCanceled() {
+        return isCanceled;
+    }
+
+    public void setIsCanceled(float isCanceled) {
+        this.isCanceled = isCanceled;
+    }
 }
