@@ -9,6 +9,10 @@ public class FlightParser {
     public static String FLIGHTS_HEADER_SUBSTR = "YEAR";
 
     public static Tuple2<Tuple2<Integer, Integer>, Flight> parseFlightsFile(String row){
-        
+
+    }
+
+    public static boolean isNotFlightsHeader(String row){
+        return !row.contains(FLIGHTS_HEADER_SUBSTR);
     }
 }
