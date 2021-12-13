@@ -15,7 +15,7 @@ public class FlightParser {
         int originAirportIndex = Integer.parseInt(params[ORIGIN_AIRPORT_INDEX]);
         int destAirportIndex = Integer.parseInt(params[DEST_AIRPORT_INDEX]);
         float delay = params[DELAYTIME_INDEX].isEmpty()? 0.f : Float.parseFloat(params[DELAYTIME_INDEX]);
-        
+        float canc
 
     }
 
