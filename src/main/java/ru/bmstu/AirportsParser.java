@@ -1,2 +1,4 @@
-package ru.bmstu;public class AirportsParser {
+package ru.bmstu;
+
+public class AirportsParser {
 }
