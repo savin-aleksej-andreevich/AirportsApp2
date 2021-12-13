@@ -1,2 +1,5 @@
-package ru.bmstu;public class FlightsStats {
+package ru.bmstu;
+
+public class FlightsStats {
+    
 }
