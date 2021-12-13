@@ -16,6 +16,7 @@ public class FlightParser {
         int destAirportIndex = Integer.parseInt(params[DEST_AIRPORT_INDEX]);
         float delay = params[DELAYTIME_INDEX].isEmpty()? 0.f : Float.parseFloat(params[DELAYTIME_INDEX]);
         float isCancelled = Float.parseFloat(params[CANCELLED_INDEX]);
+        return new Tuple2<Tuple2<Integer, Integer>, Flight>()
 
     }
 
