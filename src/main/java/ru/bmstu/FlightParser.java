@@ -8,5 +8,7 @@ public class FlightParser {
     public static String FLIGHT_DELIMETR = ",";
     public static String FLIGHTS_HEADER_SUBSTR = "YEAR";
 
-    public 
+    public static Tuple2<Tuple2<Integer, Integer>, Flight> parseFlightsFile(String row){
+        
+    }
 }
