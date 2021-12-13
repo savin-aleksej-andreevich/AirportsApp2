@@ -1,10 +1,10 @@
 package ru.bmstu;
 
-public class Flights {
+public class Flight {
     private int originAirportID, destAirportID;
     private float delay, isCancelled;
 
-    public Flights(int originAirportID, int destAirportId, float delay, float isCanceled) {
+    public Flight(int originAirportID, int destAirportId, float delay, float isCanceled) {
         this.originAirportID = originAirportID;
         this.destAirportID = destAirportId;
         this.delay = delay;

@@ -2,15 +2,19 @@ package ru.bmstu;
 
 import java.io.Serializable;
 
-public class FlightsStats implements Serializable {
+public class FlightStats implements Serializable {
     private int count, countCancelledFlights, countLateFlights;
     private float maxLateTime;
 
-    public FlightsStats (int count, int countCancelledFlights, int countLateFlights, float maxLateTime) {
+    public FlightStats(int count, int countCancelledFlights, int countLateFlights, float maxLateTime) {
         this.count = count;
         this.countCancelledFlights = countLateFlights;
         this.countLateFlights = countLateFlights;
         this.maxLateTime = maxLateTime;
+    }
+
+    public static FlightStats createFlightsStats (Flight flights) {
+
     }
 
     public int getCount() {
