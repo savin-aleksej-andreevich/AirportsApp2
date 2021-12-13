@@ -44,4 +44,12 @@ public class FlightsStats implements Serializable {
     public void setMaxDelay(float maxDelay) {
         this.maxDelay = maxDelay;
     }
+
+    @Override
+    public String toString() {
+        return  "maxLateTime=" + maxDelay +
+                ", latePercent=" + ((float)countLateFlights/count * 100) +
+                ", cancelledPercent=" + ((float)countCancelledFlights/count * 100);
+    }
+
 }
