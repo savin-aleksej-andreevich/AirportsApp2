@@ -47,7 +47,7 @@ public class FlightsStats implements Serializable {
 
     @Override
     public String toString() {
-        return  "maxLateTime=" + maxDelay +
+        return  "maxLateTime=" + maxLateTime +
                 ", latePercent=" + ((float)countLateFlights/count * 100) +
                 ", cancelledPercent=" + ((float)countCancelledFlights/count * 100);
     }
