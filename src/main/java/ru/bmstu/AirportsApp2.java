@@ -10,6 +10,7 @@ import java.util.Map;
 
 
 public class AirportsApp2 {
+    public static String outputPath = "hdfs://localhost:9000/user/sava/output_3";
 
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("lab5");
