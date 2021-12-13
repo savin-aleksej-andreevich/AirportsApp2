@@ -2,7 +2,7 @@ package ru.bmstu;
 
 public class Flight {
     private int originAirportID, destAirportId;
-    private float delay, isCanceled;
+    private float delay, isCancelled;
 
     public Flight (int originAirportID, int destAirportId, float delay, float isCanceled) {
         this.originAirportID = originAirportID;
@@ -41,5 +41,15 @@ public class Flight {
 
     public void setIsCanceled(float isCanceled) {
         this.isCanceled = isCanceled;
+    }
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "delayTime='" + delay + '\'' +
+                ", cancelled=" + isCancelled +
+                ", destAirportId=" + destAirportID +
+                ", originAirportId=" + originAirportID +
+                '}';
     }
 }
