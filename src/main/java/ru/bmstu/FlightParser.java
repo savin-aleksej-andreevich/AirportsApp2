@@ -1,2 +1,5 @@
-package ru.bmstu;public class FlightParser {
+package ru.bmstu;
+
+public class FlightParser {
+    pu
 }
