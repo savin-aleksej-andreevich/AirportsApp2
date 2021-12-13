@@ -16,6 +16,7 @@ public class AirportsApp2 {
         SparkConf conf = new SparkConf().setAppName("lab5");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> rows = sc.textFile("664600583_T_ONTIME_sample.csv");
-        JavaPairRDD<Tuple2<Integer, Integer>, Flight> flights = rows.filter();
+        JavaPairRDD<Tuple2<Integer, Integer>, Flight> flights = rows.filter(FlightParser::isNotFlightsHeader)
+                .mapToPair(FlightParser::parseFlightsFile);
     }
 }

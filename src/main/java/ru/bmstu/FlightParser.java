@@ -1,5 +1,7 @@
 package ru.bmstu;
 
+import scala.Tuple2;
+
 public class FlightParser {
     public static int DEST_AIRPORT_INDEX = 14;
     public static int ORIGIN_AIRPORT_INDEX = 11;
@@ -8,8 +10,8 @@ public class FlightParser {
     public static String FLIGHT_DELIMETR = ",";
     public static String FLIGHTS_HEADER_SUBSTR = "YEAR";
 
-    public static Tuple2<Tuple2<Integer, Integer>, Flight> parseFlightsFile(String row){
-
+    public static Tuple2<Tuple2<Integer, Integer>, Flight> parseFlightsFile(String row) {
+        int delay = row[]
     }
 
     public static boolean isNotFlightsHeader(String row){
