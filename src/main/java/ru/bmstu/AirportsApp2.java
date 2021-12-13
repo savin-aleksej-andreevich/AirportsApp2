@@ -4,9 +4,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
-import java.util.Map;
 
 
 public class AirportsApp2 {
@@ -16,7 +14,7 @@ public class AirportsApp2 {
         SparkConf conf = new SparkConf().setAppName("lab5");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<String> rows = sc.textFile("664600583_T_ONTIME_sample.csv");
-        JavaPairRDD<Tuple2<Integer, Integer>, Flight> flights = rows.filter(FlightParser::isNotFlightsHeader)
-                .mapToPair(FlightParser::parseFlightsFile);
+        JavaPairRDD<Tuple2<Integer, Integer>, Flights> flights = rows.filter(FlightsParser::isNotFlightsHeader)
+                .mapToPair(FlightsParser::parseFlightsFile);
     }
 }

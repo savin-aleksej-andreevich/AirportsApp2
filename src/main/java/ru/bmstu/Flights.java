@@ -1,14 +1,14 @@
 package ru.bmstu;
 
-public class Flight {
-    private int originAirportID, destAirportId;
+public class Flights {
+    private int originAirportID, destAirportID;
     private float delay, isCancelled;
 
-    public Flight (int originAirportID, int destAirportId, float delay, float isCanceled) {
+    public Flights(int originAirportID, int destAirportId, float delay, float isCanceled) {
         this.originAirportID = originAirportID;
-        this.destAirportId = destAirportId;
+        this.destAirportID = destAirportId;
         this.delay = delay;
-        this.isCanceled = isCanceled;
+        this.isCancelled = isCanceled;
     }
 
     public int getOriginAirportID() {
@@ -20,11 +20,11 @@ public class Flight {
     }
 
     public int getDestAirportId() {
-        return destAirportId;
+        return destAirportID;
     }
 
     public void setDestAirportId(int destAirportId) {
-        this.destAirportId = destAirportId;
+        this.destAirportID = destAirportId;
     }
 
     public float getDelay() {
@@ -36,11 +36,11 @@ public class Flight {
     }
 
     public float getIsCanceled() {
-        return isCanceled;
+        return isCancelled;
     }
 
     public void setIsCanceled(float isCanceled) {
-        this.isCanceled = isCanceled;
+        this.isCancelled = isCanceled;
     }
 
     @Override
