@@ -16,7 +16,7 @@ public class FlightParser {
         int destAirportId = Integer.parseInt(params[DEST_AIRPORT_INDEX]);
         float delay = params[DELAYTIME_INDEX].isEmpty()? 0.f : Float.parseFloat(params[DELAYTIME_INDEX]);
         float isCanceled = Float.parseFloat(params[CANCELLED_INDEX]);
-        return new Tuple2<>(new Tuple2<>(originAirportId, destAirportId), new Flight(delay, isCanceled, destAirportId, originAirportId));
+        return new Tuple2<>(new Tuple2<>(originAirportId, destAirportId), new Flight(destAirportId, originAirportId, delay, isCanceled));
     }
 
     public static boolean isNotFlightsHeader(String row){
