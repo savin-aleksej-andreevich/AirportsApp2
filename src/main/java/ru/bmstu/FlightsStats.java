@@ -1,5 +1,7 @@
 package ru.bmstu;
 
-public class FlightsStats {
+import java.io.Serializable;
+
+public class FlightsStats extends Serializable{
 
 }
