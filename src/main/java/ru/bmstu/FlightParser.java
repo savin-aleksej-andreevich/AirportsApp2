@@ -12,12 +12,11 @@ public class FlightParser {
 
     public static Tuple2<Tuple2<Integer, Integer>, Flight> parseFlightsFile(String row) {
         String[] params = row.split(SEPARATOR);
-        int originAirportIndex = Integer.parseInt(params[ORIGIN_AIRPORT_INDEX]);
-        int destAirportIndex = Integer.parseInt(params[DEST_AIRPORT_INDEX]);
+        int originAirportId = Integer.parseInt(params[ORIGIN_AIRPORT_INDEX]);
+        int destAirportId = Integer.parseInt(params[DEST_AIRPORT_INDEX]);
         float delay = params[DELAYTIME_INDEX].isEmpty()? 0.f : Float.parseFloat(params[DELAYTIME_INDEX]);
-        float isCancelled = Float.parseFloat(params[CANCELLED_INDEX]);
-        return new Tuple2<Tuple2<Integer, Integer>, Flight>()
-
+        float isCanceled = Float.parseFloat(params[CANCELLED_INDEX]);
+        return new Tuple2<>(new Tuple2<>(originAirportId, destAirportId), new Flight(delay, isCanceled, destAirportId, originAirportId));
     }
 
     public static boolean isNotFlightsHeader(String row){
