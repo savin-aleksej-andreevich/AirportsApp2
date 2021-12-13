@@ -1,2 +1,4 @@
-package ru.bmstu;public class Flight {
+package ru.bmstu;
+
+public class Flight {
 }
