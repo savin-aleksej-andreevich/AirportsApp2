@@ -12,4 +12,36 @@ public class FlightsStats implements Serializable {
         this.countLateFlights = countLateFlights;
         this.maxDelay = maxDelay;
     }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public int getCountCancelledFlights() {
+        return countCancelledFlights;
+    }
+
+    public void setCountCancelledFlights(int countCancelledFlights) {
+        this.countCancelledFlights = countCancelledFlights;
+    }
+
+    public int getCountLateFlights() {
+        return countLateFlights;
+    }
+
+    public void setCountLateFlights(int countLateFlights) {
+        this.countLateFlights = countLateFlights;
+    }
+
+    public float getMaxDelay() {
+        return maxDelay;
+    }
+
+    public void setMaxDelay(float maxDelay) {
+        this.maxDelay = maxDelay;
+    }
 }
