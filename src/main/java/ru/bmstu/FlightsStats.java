@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public class FlightsStats implements Serializable {
     private int count, countCancelledFlights, countLateFlights;
-    private float maxDelay;
+    private float maxLateTime;
 
-    public FlightsStats (int count, int countCancelledFlights, int countLateFlights, float maxDelay) {
+    public FlightsStats (int count, int countCancelledFlights, int countLateFlights, float maxLateTime) {
         this.count = count;
         this.countCancelledFlights = countLateFlights;
         this.countLateFlights = countLateFlights;
-        this.maxDelay = maxDelay;
+        this.maxLateTime = maxLateTime;
     }
 
     public int getCount() {
@@ -37,12 +37,12 @@ public class FlightsStats implements Serializable {
         this.countLateFlights = countLateFlights;
     }
 
-    public float getMaxDelay() {
-        return maxDelay;
+    public float getMaxLateTime() {
+        return maxLateTime;
     }
 
-    public void setMaxDelay(float maxDelay) {
-        this.maxDelay = maxDelay;
+    public void setMaxLateTime(float maxLateTime) {
+        this.maxLateTime = maxLateTime;
     }
 
     @Override
