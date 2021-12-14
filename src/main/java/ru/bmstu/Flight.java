@@ -45,7 +45,7 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
+        return "ru.bmstu.Flight{" +
                 "delayTime='" + delay + '\'' +
                 ", cancelled=" + isCancelled +
                 ", destAirportId=" + destAirportID +
