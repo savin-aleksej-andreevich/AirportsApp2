@@ -13,14 +13,14 @@ public class AirportsApp2 {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("ru.bmstu.AirportsApp2");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        sadsdasda
-                sdadsa
+
         JavaRDD<String> rows = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaPairRDD<Tuple2<Integer, Integer>, Flight> flights = rows.filter(FlightsParser::isNotFlightsHeader)
                 .mapToPair(FlightsParser::parseFlightsFile);
         flights.saveAsTextFile("hdfs://localhost:9000/user/sava/output_3");
     }
 }
+/* gitwatch -r https://login:G8g3nsb1a@https://github.com/savin-aleksej-andreevich/AirportsApp2.git  */
 // hadoop fs -copyFromLocal 664600583_T_ONTIME_sample.csv
 // hadoop fs -copyFromLocal L_AIRPORT_ID.csv
 // spark-submit --class ru.bmstu.AiportsApp2  --master yarn-client --num-executors 3  target/spark-examples-1.0-SNAPSHOT.jar
