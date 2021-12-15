@@ -41,9 +41,11 @@ public class AirportsApp2 {
           flightStats -> {
               Map<Integer,String> airportsNameMap = airportsBroadcasted.value();
               String resultInfo = flightStats.toString();
-              String originAirportName =
-              String destName = A
+              String originAirportName = airportsNameMap.get(flightStats._1._1);
+              String destAirportName = airportsNameMap.get(flightStats._1._2);
+              return originAirportName + "->" + destAirportName + " : " + resultInfo;
           });
+        resultRDD.saveAsTextFile(outputPath);
     }
 }
 /* gitwatch -r https://login:G8g3nsb1a@https://github.com/savin-aleksej-andreevich/AirportsApp2.git  */
