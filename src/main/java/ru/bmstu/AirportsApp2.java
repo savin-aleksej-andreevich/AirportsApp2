@@ -20,7 +20,11 @@ public class AirportsApp2 {
         JavaRDD<String> rows = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaPairRDD<Tuple2<Integer, Integer>, Flight> flights = rows.filter(FlightsParser::isNotFlightsHeader) // удаление хедера полетов
                 .mapToPair(FlightsParser::parseFlightsFile);
-        JavaPairRDD<Tuple2 <Integer, Integer>, Flight> flightsStats = flights.combineByKey()
+        JavaPairRDD<Tuple2 <Integer, Integer>, Flight> flightsStats = flights.combineByKey (
+                FlightStats::createFlightsStats,
+                FlightStats::addFlight,
+                FlightStats::combineFlightStats
+        );
     }
 }
 /* gitwatch -r https://login:G8g3nsb1a@https://github.com/savin-aleksej-andreevich/AirportsApp2.git  */
