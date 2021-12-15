@@ -15,7 +15,7 @@ public class AirportsApp2 {
         JavaSparkContext sc = new JavaSparkContext(conf);
 
         JavaRDD<String> rows = sc.textFile("664600583_T_ONTIME_sample.csv");
-        JavaPairRDD<Tuple2<Integer, Integer>, Flight> flights = rows.filter(FlightsParser::isNotFlightsHeader)
+        JavaPairRDD<Tuple2<Integer, Integer>, Flight> flights = rows.filter(FlightsParser::isNotFlightsHeader) // удаление хедера полетов
                 .mapToPair(FlightsParser::parseFlightsFile);
         flights.saveAsTextFile("hdfs://localhost:9000/user/sava/output_3");
     }
