@@ -37,7 +37,13 @@ public class AirportsApp2 {
 
         Map<Integer, String> airportsMap = airports.collectAsMap();
         final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsMap);
-        
+        JavaRDD<String> resultRDD = flightsStats.map(
+          flightStats -> {
+              Map<Integer,String> airportsNameMap = airportsBroadcasted.value();
+              String resultInfo = flightStats.toString();
+              String originAirportName =
+              String destName = A
+          });
     }
 }
 /* gitwatch -r https://login:G8g3nsb1a@https://github.com/savin-aleksej-andreevich/AirportsApp2.git  */
