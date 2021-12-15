@@ -3,11 +3,11 @@ package ru.bmstu;
 import java.io.Serializable;
 
 public class FlightStats implements Serializable {
-    private int count, countCancelledFlights, countLateFlights;
+    private int countFlights, countCancelledFlights, countLateFlights;
     private float maxLateTime;
 
     public FlightStats(int count, int countCancelledFlights, int countLateFlights, float maxLateTime) {
-        this.count = count;
+        this.countFlights = count;
         this.countCancelledFlights = countLateFlights;
         this.countLateFlights = countLateFlights;
         this.maxLateTime = maxLateTime;
@@ -18,27 +18,27 @@ public class FlightStats implements Serializable {
     }
 
     public static FlightStats addFlight (FlightStats stats, Flight flight) {
-        int count = stats.getCount() + 1;
+        int countFlights = stats.getCountFlights() + 1;
         int countCancelledFlights = flight.getIsCanceled() == 0.f? stats.getCountCancelledFlights() + 1 : stats.getCountCancelledFlights();
         int countLateFlights = flight.getDelay() == 0.f? stats.getCountLateFlights() + 1 : stats.getCountLateFlights();
         float maxLateTime = Math.max(stats.getMaxLateTime(), flight.getDelay());
-        return new FlightStats(count, countCancelledFlights, countLateFlights, maxLateTime);
+        return new FlightStats(countFlights, countCancelledFlights, countLateFlights, maxLateTime);
     }
 
     public static FlightStats combineFlightStats (FlightStats stats1, FlightStats stats2) {
-        int combineCount = stats1.getCount() + stats2.getCount();
+        int countFlights = stats1.getCountFlights() + stats2.getCountFlights();
         int countCancelledFlights = stats1.getCountCancelledFlights() + stats2.getCountCancelledFlights();
         int countLateFlights = stats1.getCountLateFlights() + stats2.getCountLateFlights();
         float maxLateTime = Math.max(stats1.getMaxLateTime(), stats2.getMaxLateTime());
-        return new FlightStats(combineCount, countCancelledFlights, countLateFlights, maxLateTime);
+        return new FlightStats(countFlights, countCancelledFlights, countLateFlights, maxLateTime);
     }
 
-    public int getCount() {
-        return count;
+    public int getCountFlights() {
+        return countFlights;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setCountFlights(int countFlights) {
+        this.countFlights = countFlights;
     }
 
     public int getCountCancelledFlights() {
@@ -68,8 +68,8 @@ public class FlightStats implements Serializable {
     @Override
     public String toString() {
         return  "maxLateTime=" + maxLateTime +
-                ", latePercent=" + ((float)countLateFlights/count * 100) +
-                ", cancelledPercent=" + ((float)countCancelledFlights/count * 100);
+                ", latePercent=" + ((float)countLateFlights/ countFlights * 100) +
+                ", cancelledPercent=" + ((float)countCancelledFlights/ countFlights * 100);
     }
 
 }
