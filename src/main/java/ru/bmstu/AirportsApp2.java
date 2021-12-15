@@ -5,6 +5,8 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
+
+import java.util.Map;
 /*
 Требуется определить для пары <аэропорт отлета, аэропорт прибытия> максимальное время опоздания, процент опоздавших+отмененных рейсов.
 Также требуется связать полученную таблицу с названиями аэропортов.
@@ -31,9 +33,9 @@ public class AirportsApp2 {
         JavaPairRDD<Integer, String> airports = airportsFile
                 .filter(AirportsParser::isNotAirportsHeader)
                 .mapToPair(AirportsParser::parseAiportFile);
-        JavaPairRDD<Integer, String> airportsMap = airports.collectAsMap();
-        
 
+        Map<Integer, String> airportsMap = airports.collectAsMap();
+        
 
     }
 }
