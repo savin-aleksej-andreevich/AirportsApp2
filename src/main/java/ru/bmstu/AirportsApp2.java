@@ -28,7 +28,10 @@ public class AirportsApp2 {
         );
 
         JavaRDD<String> airportsFile = sc.textFile("L_AIRPORT_ID.csv_");
-        JavaPairRDD<Integer, String> airports = airportsFile.filter()
+        JavaPairRDD<Integer, String> airports = airportsFile
+                .filter(AirportsParser::isNotAirportsHeader)
+                .mapToPair(AirportsParser::parseAiportFile);
+        JavaPairRDD<Integer, String> airportsMap = 
 
 
     }
