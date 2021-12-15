@@ -31,7 +31,8 @@ public class AirportsApp2 {
         JavaPairRDD<Integer, String> airports = airportsFile
                 .filter(AirportsParser::isNotAirportsHeader)
                 .mapToPair(AirportsParser::parseAiportFile);
-        JavaPairRDD<Integer, String> airportsMap = 
+        JavaPairRDD<Integer, String> airportsMap = airports.collectAsMap();
+        
 
 
     }
