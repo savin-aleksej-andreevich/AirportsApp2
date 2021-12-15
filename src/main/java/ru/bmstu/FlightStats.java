@@ -24,7 +24,9 @@ public class FlightStats implements Serializable {
         return new FlightStats(stats.getCount() + 1, countCancelledFlights, countLateFlights, maxLateTime);
     }
 
-    public static FlightStats
+    public static FlightStats combineFlightStats (FlightStats stats1, FlightStats stats2) {
+        int combineCount = stats1.getCount() + stats2.getCount();
+    }
 
     public int getCount() {
         return count;
