@@ -27,4 +27,3 @@ public class AirportsApp2 {
 // hadoop fs -copyToLocal output_3
 
 
-апрапарпаррп
