@@ -26,7 +26,8 @@ public class AirportsApp2 {
                 FlightStats::combineFlightStats
         );
 
-        JavaRDD<String> airports = sc.textFile("L_AIRPORT_ID.csv_");
+        JavaRDD<String> airportsFile = sc.textFile("L_AIRPORT_ID.csv_");
+
 
     }
 }
