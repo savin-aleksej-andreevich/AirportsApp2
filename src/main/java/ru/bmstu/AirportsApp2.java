@@ -25,5 +25,3 @@ public class AirportsApp2 {
 // hadoop fs -copyFromLocal L_AIRPORT_ID.csv
 // spark-submit --class ru.bmstu.AiportsApp2  --master yarn-client --num-executors 3  target/spark-examples-1.0-SNAPSHOT.jar
 // hadoop fs -copyToLocal output_3
-
-
