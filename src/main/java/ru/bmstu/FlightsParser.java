@@ -3,7 +3,7 @@ package ru.bmstu;
 import scala.Tuple2;
 
 public class FlightsParser {
-    
+
     public static int ORIGIN_AIRPORT_INDEX = 11;
     public static int DEST_AIRPORT_INDEX = 14;
     public static int DELAYTIME_INDEX = 18;
