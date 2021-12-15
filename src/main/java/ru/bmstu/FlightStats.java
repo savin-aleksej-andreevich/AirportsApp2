@@ -13,8 +13,8 @@ public class FlightStats implements Serializable {
         this.maxLateTime = maxLateTime;
     }
 
-    public static FlightStats createFlightsStats (Flight flights) {
-        return new FlightStats(1, flights.getIsCanceled() > 0.f ? 1 : 0, flights.getDelay() > 0.f ? 1 : 0, flights.getDelay());
+    public static FlightStats createFlightsStats (Flight flight) {
+        return new FlightStats(1, flight.getIsCanceled() > 0.f ? 1 : 0, flight.getDelay() > 0.f ? 1 : 0, flight.getDelay());
     }
 
 
