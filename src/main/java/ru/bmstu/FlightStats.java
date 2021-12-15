@@ -21,6 +21,7 @@ public class FlightStats implements Serializable {
         int countCancelledFlights = flight.getIsCanceled() == 0.f? stats.getCountCancelledFlights() + 1 : stats.getCountCancelledFlights();
         int countLateFlights = flight.getDelay() == 0.f? stats.getCountLateFlights() + 1 : stats.getCountLateFlights();
         float maxLateTime = Math.max(stats.getMaxLateTime(), flight.getDelay());
+        return new FlightStats(stats.getCount() + 1, countCancelledFlights, countLateFlights, maxLateTime);
     }
 
 
