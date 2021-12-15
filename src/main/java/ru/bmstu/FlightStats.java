@@ -17,8 +17,8 @@ public class FlightStats implements Serializable {
         return new FlightStats(1, flight.getIsCanceled() > 0.f ? 1 : 0, flight.getDelay() > 0.f ? 1 : 0, flight.getDelay());
     }
 
-    public static FlightStats addFlight (Flight flight) {
-        int countCancelledFlights = sta
+    public static FlightStats addFlight (FlightStats stats, Flight flight) {
+        int countCancelledFlights = flight.getIsCanceled() == 0.f?
     }
 
 
