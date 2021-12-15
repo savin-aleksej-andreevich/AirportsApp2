@@ -37,7 +37,7 @@ public class AirportsApp2 {
 
         Map<Integer, String> airportsMap = airports.collectAsMap();
         final Broadcast<Map<Integer, String>> airportsBroadcasted = sc.broadcast(airportsMap);
-
+        
     }
 }
 /* gitwatch -r https://login:G8g3nsb1a@https://github.com/savin-aleksej-andreevich/AirportsApp2.git  */
