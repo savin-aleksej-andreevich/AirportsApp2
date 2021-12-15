@@ -25,6 +25,9 @@ public class AirportsApp2 {
                 FlightStats::addFlight,
                 FlightStats::combineFlightStats
         );
+
+        JavaRDD<String> airports = sc.textFile("L_AIRPORT_ID.csv_");
+
     }
 }
 /* gitwatch -r https://login:G8g3nsb1a@https://github.com/savin-aleksej-andreevich/AirportsApp2.git  */
